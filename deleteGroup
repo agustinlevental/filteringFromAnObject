@@ -1,0 +1,19 @@
+let stateItems= {…} 
+const DeleteGroup = () => {
+const [items, setItems] = useState(stateItems);
+  // the id of the combo that has been right-clicked on
+const [groupSelected, setGroupSelected] = useState(null);
+
+
+    let filtered = {};
+
+    Object.keys(items).forEach((id) => {
+//if items[id] has a .link so is a link between items, and I don’t want to delete it.
+      if (items[id].link || items[id].data.group !== goupSelected) {
+        filtered = { ...filtered, [id]: items[id] };
+      }
+    });
+
+    setItems(filtered);
+  };
+
